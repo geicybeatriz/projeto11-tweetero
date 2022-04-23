@@ -28,11 +28,11 @@ app.post("/sign-up", (req, res) => {
 });
 
 app.post("/tweets", (req, res) => {
-    const tweetRecebido = req.body;
-    const user = users.find(e => e.username === tweetRecebido.username);
-    tweetRecebido.avatar = user.avatar;
+    const tweetReceived = req.body;
+    const user = users.find(e => e.username === tweetReceived.username);
+    tweetReceived.avatar = user.avatar;
 
-    tweets.unshift(tweetRecebido);
+    tweets.unshift(tweetReceived);
 
     res.send("OK");
 });
@@ -43,5 +43,5 @@ app.get("/tweets", (req, res) => {
 
 
 app.listen(5000, () => {
-    console.log(chalk.bold.green(`Aplicação está funcionando!`))
+    console.log(chalk.bold.green(`Server is running at port 5000!`))
 } );
